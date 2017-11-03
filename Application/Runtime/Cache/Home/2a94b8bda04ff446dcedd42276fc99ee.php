@@ -14,7 +14,7 @@
 </body>
 <script>
     function toQQLogin() {
-        var _url="<?php echo U('Index/qqlogin');?>";  //转向网页的地址;
+        var _url="<?php echo U('Index/QQLogin');?>";  //转向网页的地址;
         var name='QQ授权登录';    //网页名称，可为空;
         var iWidth=800; //弹出窗口的宽度;
         var iHeight=600;   //弹出窗口的高度;

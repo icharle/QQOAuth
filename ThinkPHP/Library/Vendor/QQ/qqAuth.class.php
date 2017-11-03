@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\qq;
+namespace Vendor\QQ;
 class qqAuth {
     private static $data;
     //APP ID
@@ -33,7 +33,7 @@ class qqAuth {
         $state = md5(uniqid(rand(), TRUE));
         $_SESSION['state']=$state;
         $param['state']=$state;
-        $param['scope']="get_user_info";
+        $param['scope']="get_user_info";       //其它权限
         $param =http_build_query($param,'','&');
         $url=$url."?".$param;
         header("Location:".$url);
