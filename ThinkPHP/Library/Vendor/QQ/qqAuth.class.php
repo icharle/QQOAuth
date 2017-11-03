@@ -44,7 +44,6 @@ class qqAuth {
         $param['grant_type']="authorization_code";
         $param['client_id']=$this->app_id;
         $param['client_secret']=$this->app_key;
-        //$param['code']=$this->code;
         $param['code']=$_GET['code'];
         $param['redirect_uri']=$this->callBackUrl;
         $param =http_build_query($param,'','&');
@@ -105,16 +104,4 @@ class qqAuth {
         return $data;
     }
 
-    //CURL POST
-    private function postUrl($url,$post_data){
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-        ob_start();
-        curl_exec($ch);
-        $result = ob_get_contents();
-        ob_end_clean();
-        return $result;
-    }
 }
